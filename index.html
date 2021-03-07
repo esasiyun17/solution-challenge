@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Solution Challenge</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="all-stuff">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+          <a class="navbar-brand" href="#">Educational Games</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="/"
+                  >Home <span class="sr-only">(current)</span></a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./login.html">Link</a>
+              </li>
+              
+              
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+              <input
+                class="form-control mr-sm-2"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <button
+                class="btn btn-outline-success my-2 my-sm-0"
+                type="submit"
+              >
+                Destek Ol
+              </button>
+            </form>
+          </div>
+        </nav>
+        <div class="cards">
+          <div class="card" style="width: 18rem; margin-top: 2rem">
+            <img src="./img/cute-boy-eating-healthy-food-MB95CR.jpg" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">Sağlıklı Beslenelim</h5>
+              <p class="card-text">
+                Sağlıklı beslenelim kaliteli yaşayalım .
+              </p>
+              <a href="./home-game.html" class="btn btn-primary"
+                >Hadi Başlayalım</a
+              >
+            </div>
+          </div>
+          <div class="card" style="width: 18rem; margin-top: 2rem">
+            <img
+              src="./img/138068549-happy-dancing-family-father-mother-and-son-isolated-on-white-background-cartoon-people-with-kid-smil.jpg"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">Harekete Geçelim</h5>
+              <p class="card-text">
+                Kaliteli yaşam için hergün düzenli hep beraber sporumuzu yapalım .
+              </p>
+              <a href="./recycling.html" class="btn btn-primary"
+                >Hadi Başlayalım</a
+              >
+            </div>
+          </div>
+          <div class="card" style="width: 18rem; margin-top: 2rem">
+            <img
+              src="./img/obcq_vune_180620.jpg"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">Çevreyi Temizlelim</h5>
+              <p class="card-text">
+                Daha güzel bir dünya için evimizin içinde yapmamız gerekenler
+                konusunda bize yardım edermisin?
+              </p>
+              <a href="./home-game.html" class="btn btn-primary"
+                >Hadi Başlayalım</a
+              >
+            </div>
+          </div>
+          
+
+        </div>
+      </div>
+    </div>
+    <
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-analytics.js"></script>
+
+    <script>
+      var firebaseConfig = {
+        apiKey: "AIzaSyCenPnGYDnbnKOyUzLazToP6UIeM6gM62c",
+        authDomain: "solution-challenge-b51fe.firebaseapp.com",
+        projectId: "solution-challenge-b51fe",
+        storageBucket: "solution-challenge-b51fe.appspot.com",
+        messagingSenderId: "752251901776",
+        appId: "1:752251901776:web:c503565ec4f47ad631fe55",
+        measurementId: "G-5WQ867YPVK",
+      };
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+
+    //   firebase.auth().createUserWithEmailAndPassword(email="yunusfidann2@outlook.com",password="shanright5").then((userCredential)=>{
+    //       var user = userCredential.user;
+    //       console.log(user);
+    //   }).catch(err=>console.error(err));
+
+      firebase.auth().signInWithEmailAndPassword(email="yunusfidann@outlook.com",password="shanright5").then((userCredential)=>{
+          var user = userCredential.user;
+      }).catch(err=>console.log(err))
+    </script>
+    <script src="script.js"></script>
+  </body>
+</html>

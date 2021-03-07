@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      #game {
+        width: 500px;
+        height: 200px;
+        border: 1px solid black;
+      }
+      #character {
+        width: 20px;
+        height: 50px;
+        background-color: red;
+        position: relative;
+        top: 150px;
+        
+      }
+      
+      #block {
+        width: 20px;
+        height: 20px;
+        background-color: blue;
+        position: relative;
+        top: -20px;
+        left: 480px;
+        animation: block 1500ms infinite linear;
+      }
+
+      @keyframes block {
+        from {
+          top: -50px;
+        }
+        to {
+          top: 130px;
+        }
+      }
+    </style>
+    <title>Solution Challenge</title>
+  </head>
+  <body>
+    <div id="game">
+      <div id="character"></div>
+      <div class="block1" id="block"></div>
+      <div class="block2" id="block"></div>
+      <div class="block3" id="block"></div>
+      
+    </div>
+    <button class="random">Click</button>
+    <script src="recycling.js"></script>
+  </body>
+</html>

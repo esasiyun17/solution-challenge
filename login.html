@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" />
+
+    <link rel="stylesheet" href="login.css" />
+    <title>Educational Games</title>
+  </head>
+  <body>
+    <nav
+      class="navbar navbar-expand-lg navbar-dark bg-dark"
+      style="background-color: #000000 !important"
+    >
+      <a class="navbar-brand" href="#">Educational Games</a>
+    </nav>
+    <div class="panda">
+      <div class="ear"></div>
+      <div class="face">
+        <div class="eye-shade"></div>
+        <div class="eye-white">
+          <div class="eye-ball"></div>
+        </div>
+        <div class="eye-shade rgt"></div>
+        <div class="eye-white rgt">
+          <div class="eye-ball"></div>
+        </div>
+        <div class="nose"></div>
+        <div class="mouth"></div>
+      </div>
+      <div class="body"></div>
+      <div class="foot">
+        <div class="finger"></div>
+      </div>
+      <div class="foot rgt">
+        <div class="finger"></div>
+      </div>
+    </div>
+    <form>
+      <div class="hand"></div>
+      <div class="hand rgt"></div>
+      <h1>Login</h1>
+      <div class="form-group">
+        <input required="required" class="form-control" />
+        <label class="form-label">Username </label>
+      </div>
+      <div class="form-group">
+        <input
+          id="password"
+          type="password"
+          required="required"
+          class="form-control"
+        />
+        <label class="form-label">Password</label>
+        <p class="alert">Invalid Credentials..!!</p>
+        <button class="btn">Login</button>
+      </div>
+    </form>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-analytics.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+      $("#password").focusin(function () {
+        $("form").addClass("up");
+      });
+      $("#password").focusout(function () {
+        $("form").removeClass("up");
+      });
+
+      // Panda Eye move
+      $(document).on("mousemove", function (event) {
+        var dw = $(document).width() / 15;
+        var dh = $(document).height() / 15;
+        var x = event.pageX / dw;
+        var y = event.pageY / dh;
+        $(".eye-ball").css({
+          width: x,
+          height: y,
+        });
+      });
+
+      // validation
+
+      $(".btn").click(function () {
+          window.location = "/index.html"
+        $("form").addClass("wrong-entry");
+        setTimeout(function () {
+          $("form").removeClass("wrong-entry");
+        }, 3000);
+      });
+    </script>
+    <script>
+        var firebaseConfig = {
+          apiKey: "AIzaSyCenPnGYDnbnKOyUzLazToP6UIeM6gM62c",
+          authDomain: "solution-challenge-b51fe.firebaseapp.com",
+          projectId: "solution-challenge-b51fe",
+          storageBucket: "solution-challenge-b51fe.appspot.com",
+          messagingSenderId: "752251901776",
+          appId: "1:752251901776:web:c503565ec4f47ad631fe55",
+          measurementId: "G-5WQ867YPVK",
+        };
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+  
+        firebase.auth().createUserWithEmailAndPassword(email="test2@outlook.com",password="test123").then((userCredential)=>{
+            var user = userCredential.user;
+            console.log(user);
+        }).catch(err=>console.error(err));
+  
+        firebase.auth().signInWithEmailAndPassword(email="test2@outlook.com",password="test123").then((userCredential)=>{
+            var user = userCredential.user;
+            console.log(user);
+        }).catch(err=>console.log(err))
+      </script>
+  </body>
+</html>
