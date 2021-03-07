@@ -12,3 +12,4 @@ Bu sebeple çocukların eğlenirken öğrenebilecekleri bir platform olan **bili
 3. Javascript
 4. Bootstrap
 5. Firebase
+6. jQuery
